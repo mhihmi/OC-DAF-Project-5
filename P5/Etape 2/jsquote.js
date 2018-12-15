@@ -38,29 +38,34 @@ function generateRandomQuote(style) {
 
 };
 
-// Etape 2 : des citations des citations configurables
+// Etape 2 : des citations configurables
 
 function generateMultipleCitations(number, style) {
-    Let x = document.getElementById("theme");
-    const style = x;
-    let y = document.getElementById("nombre").options;
-    const number = y;
     for (var i = 0; i < number; i++) {
+        let style = document.getElementById("theme").selectedIndex;
+        let number = document.getElementById("nombre").selectedIndex;
+        let quoteBox = document.getElementById("quoteBox");
+        block = document.createElement("blockquote");
+        paragraph = document.createElement("p");
+
         const citation = generateRandomQuote(style);
-        console.log('citation : ' + i + ' - ' + citation);
-    }
-}
-
-function createBlockquote() { //* Fonction permettant de créer les blocs de citations et de les y introduire
-    for (var y = 0; y < choixNb; y++) {
-        var quoteBox = document.getElementById("quoteBox"),
-            block = document.createElement("blockquote"),
-            paragraph = document.createElement("p");
-
-        paragraph.id = "citation" + y;
 
         quoteBox.appendChild(block);
         block.appendChild(paragraph);
+    }
+    document.getElementById("Boutton1").style.display = "none";
+    document.getElementById("Boutton2").style.display = "block";
+};
 
+generateMultipleCitations(nombre, theme);
+
+function resetBlock() { //* Fonction permettant de supprimer les blocs de citations générer et de relancer l'application
+    document.getElementById("Boutton1").style.display = "block";
+    document.getElementById("Boutton2").style.display = "none";
+
+    var resetBlock = document.querySelectorAll("#quoteBox blockquote")
+    for (var u = 0, r = resetBlock.length; u < r; u++) {
+
+        quoteBox.removeChild(resetBlock[u]);
     }
 };
