@@ -19,7 +19,7 @@ body {
     padding-bottom: 40px;
 }
 
-#citationsBloque>blockquote {
+#quoteBox>blockquote {
     font-weight: 100;
     font-size: 2rem;
     max-width: 600px;
@@ -29,8 +29,8 @@ body {
     padding: .5rem;
 }
 
-#citationsBloque>blockquote:before,
-#citationsBloque>blockquote:after {
+#quoteBox>blockquote:before,
+#quoteBox>blockquote:after {
     position: absolute;
     color: #f1efe6;
     font-size: 8rem;
@@ -38,13 +38,13 @@ body {
     height: 4rem;
 }
 
-#citationsBloque>blockquote:before {
+#quoteBox>blockquote:before {
     content: '“';
     left: -5rem;
     top: -2rem;
 }
 
-#citationsBloque>blockquote:after {
+#quoteBox>blockquote:after {
     content: '”';
     right: -5rem;
     bottom: 1rem;

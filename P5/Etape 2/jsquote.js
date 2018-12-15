@@ -22,12 +22,7 @@ function generateRandomQuote(style) {
     const tabs = tab[style];
     let citation = '';
 
-    /*tabs.forEach(tab => {
-                    const index = Math.floor(Math.random() * tab.length);
-                    const text = tab[index];
-                    citation = citation + text;
-                });*/
-    // peut s'écrire aussi :            
+
     for (let tab of tabs) {
         const index = Math.floor(Math.random() * tab.length);
         const text = tab[index];
@@ -35,29 +30,48 @@ function generateRandomQuote(style) {
     }
 
     return citation;
-
-};
+}
 
 // Etape 2 : des citations configurables
 
+
 function generateMultipleCitations(number, style) {
-    for (var i = 0; i < number; i++) {
-        let style = document.getElementById("theme").selectedIndex;
-        let number = document.getElementById("nombre").selectedIndex;
-        let quoteBox = document.getElementById("quoteBox");
-        block = document.createElement("blockquote");
-        paragraph = document.createElement("p");
-
+    for (let i = 0; i < number; i++) {
         const citation = generateRandomQuote(style);
+        //console.log('citation : ' + i + ' - ' + citation);
+    };
+}
 
-        quoteBox.appendChild(block);
-        block.appendChild(paragraph);
+//generateMultipleCitations(3, 'style2')
+/*
+function getSelectValue() {
+    let selectedValue = document.getElementById("theme").value;
+    let selectedNumber = document.getElementById("number").value;
+    //console.log(selectedValue + selectedNumber);
+}
+*/
+
+document.querySelector('#generate').addEventListener('click', function() {
+
+    let choixStyle = document.querySelector('#theme').value;
+    let choixNbr = document.querySelector('#number').value;
+    let quoteBox = document.getElementById("quoteBox");
+
+    for (let i = 0; i < choixNbr; i++) {
+        let quote = document.createElement("blockquote");
+        let text = document.createElement("p")
+
+        text.id = "citation" + i;
+
+        quoteBox.appendChild(quote);
+        quote.appendChild(text);
+
+        document.getElementById("citation" + i).innerHTML = generateMultipleCitations(choixNbr, choixStyle);
+
     }
-    document.getElementById("Boutton1").style.display = "none";
-    document.getElementById("Boutton2").style.display = "block";
-};
 
-generateMultipleCitations(nombre, theme);
+    //generateMultipleCitations(choixNbr, choixStyle)
+});
 
 function resetBlock() { //* Fonction permettant de supprimer les blocs de citations générer et de relancer l'application
     document.getElementById("Boutton1").style.display = "block";
