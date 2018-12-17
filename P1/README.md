@@ -20,18 +20,18 @@ Posez-vous les questions suivantes et écrivez un bref paragraphe que vous prés
 
 ## Votre CV et LinkedIn
 
-**CV**
+### CV
 
 Peu importe vos objectifs après OpenClassrooms, votre CV est crucial pour le réseautage et pour les prochaines étapes de votre carrière. Prenez le temps de créer votre CV maintenant ou mettez à jour celui que vous avez actuellement pour montrer votre expérience avec OpenClassrooms.
 
 Pour la section "OpenClassrooms" dans votre CV, vous pourriez inscrire ceci :
-'''shell
-Étudiant à OpenClassrooms (parcours ____): 2018 - aujourd'hui
 
-J'étudie actuellement le parcours ______ sur OpenClassrooms, la plus grande plateforme de formation en ligne d'Europe.
+    Étudiant à OpenClassrooms (parcours ____): 2018 - aujourd'hui
 
-Le programme inclut les cours suivants : __________, __________, __________
-'''
+    J'étudie actuellement le parcours ______ sur OpenClassrooms, la plus grande plateforme de formation en ligne d'Europe.
+
+    Le programme inclut les cours suivants : __________, __________, __________
+
 *Nota Bene* : n'inscrivez pas cela exactement ! Créez votre propre contenu, au format que vous souhaitez.
 
 **LinkedIn**
