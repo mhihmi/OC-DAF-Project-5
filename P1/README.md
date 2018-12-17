@@ -1,6 +1,9 @@
 # Définissez votre stratégie d'apprentissage !
 
-Bienvenue dans votre parcours d'apprentissage ! Vous êtes sur le point d'apprendre  sur beaucoup de sujets intéressants, et *il est important de commencer du bon pied.*
+Bienvenue dans votre parcours d'apprentissage ! Vous êtes sur le point d'apprendre  sur beaucoup de sujets intéressants, et **il est important de commencer du bon pied**.
+
+![alt text](https://user.oc-static.com/upload/2016/10/24/1477332023351_14770590539582_embark.jpg "En route pour votre apprentissage !")
+
 
 Dans ce projet, vous établirez en détail vos objectifs d'apprentissage et vous planifierez l'ensemble de vos résultats à atteindre pour avancer efficacement avec OpenClassrooms.
 
@@ -66,21 +69,21 @@ Commencez par vous présenter en quelques lignes, cela aidera à faire connaissa
 
 ## Créer et mettre à jour votre CV
 
-    1.Le CV est au format PDF
-    2.Aucune faute d'orthographe n'est présente
-    3.Le parcours suivi est décrit
-    4.Le CV est soigné et plaisant esthétiquement
+1. Le CV est au format PDF
+2. Aucune faute d'orthographe n'est présente
+3. Le parcours suivi est décrit
+4. Le CV est soigné et plaisant esthétiquement
 
 ## Développer votre visibilité sur les réseaux sociaux d'entreprise
 
-    1.Le profil Linkedin est créé et mentionne OpenClassrooms comme école
-    2.Vous vous êtes présenté sur Workplace
+1. Le profil Linkedin est créé et mentionne OpenClassrooms comme école
+2. Vous vous êtes présenté sur Workplace
 
 ## Définir une stratégie d'apprentissage
 
-    1.Le document présentant vos objectifs est au format PDF
-    2.Les 3 points demandés sont traités sérieusement
-    3.Votre journal d'apprentissage contient un premier article décrivant vos premières expériences en tant qu'étudiant    
+1. Le document présentant vos objectifs est au format PDF
+2. Les 3 points demandés sont traités sérieusement
+3. Votre journal d'apprentissage contient un premier article décrivant vos premières expériences en tant qu'étudiant    
 
 # *Compétences évaluées*
 
