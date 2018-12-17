@@ -39,7 +39,7 @@ function generateMultipleCitations(number, style) {
     for (let i = 0; i < number; i++) {
         const citation = generateRandomQuote(style);
         //console.log('citation : ' + i + ' - ' + citation);
-    };
+    }
 }
 
 //generateMultipleCitations(3, 'style2')
@@ -66,16 +66,25 @@ document.querySelector('#generate').addEventListener('click', function() {
         quoteBox.appendChild(quote);
         quote.appendChild(text);
 
-        document.getElementById("citation" + i).innerHTML = generateMultipleCitations(choixNbr, choixStyle);
+        //document.getElementById("citation" + i).innerHTML = generateRandomQuote();
+        if (theme.selectedIndex === 0 || number.selectedIndex === 0) {
+            console.log('veuillez selectionner thème et nombre s il vous plait');
+            //document.querySelector("citation" + i).innerHTML = 'veuillez selectionner thème et nombre s il vous plait';
+        } else if (theme.selectedIndex > 0 && number.selectedIndex > 0) {
+            document.querySelector("citation" + i).innerHTML = generateRandomQuote(style);
+        }
 
     }
-
+    //document.getElementById("button1").style.display = "none";
+    //document.getElementById("button2").style.display = "block";
     //generateMultipleCitations(choixNbr, choixStyle)
 });
 
+
+
 function resetBlock() { //* Fonction permettant de supprimer les blocs de citations générer et de relancer l'application
-    document.getElementById("Boutton1").style.display = "block";
-    document.getElementById("Boutton2").style.display = "none";
+    document.getElementById("button1").style.display = "block";
+    document.getElementById("button2").style.display = "none";
 
     var resetBlock = document.querySelectorAll("#quoteBox blockquote")
     for (var u = 0, r = resetBlock.length; u < r; u++) {

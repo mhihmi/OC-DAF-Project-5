@@ -50,6 +50,15 @@ body {
     bottom: 1rem;
 }
 
+#button1 {
+    text-align: center;
+}
+
+#button2 {
+    display: none;
+    text-align: center;
+}
+
 
 /* cite {
     line-height: 3;
