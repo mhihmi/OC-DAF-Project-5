@@ -4,6 +4,7 @@ Vous avez jusqu'ici développé des petites applications JavaScript. Il faut mai
 Ce projet consistera à créer un jeu en ligne en JavaScript dans lequel 2 joueurs évoluent chacun leur tour pour s'affronter. Comme dans Highlander, il ne peut en rester qu'un !
 
 ![alt text](https://sdz-upload.s3.amazonaws.com/prod/upload/apercu15.png)
+
 Aperçu du jeu navigateur au tour par tour
 
 ## Etape 1 : génération de la carte
