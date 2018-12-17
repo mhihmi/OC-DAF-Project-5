@@ -42,7 +42,7 @@ function generateMultipleCitations(number, style) {
     }
 }
 
-// Option sortie HTML : on génère des paragraphe contenant les citations
+// Option sortie HTML : on génère des paragraphes contenant les citations
 document.getElementById('generate').addEventListener('click', function() {
 
     // Récupérer les valeurs sélectionnées
