@@ -32,9 +32,9 @@ Pour la section "OpenClassrooms" dans votre CV, vous pourriez inscrire ceci :
 
     Le programme inclut les cours suivants : __________, __________, __________
 
-*Nota Bene* : n'inscrivez pas cela exactement ! Créez votre propre contenu, au format que vous souhaitez.
+Nota Bene : *n'inscrivez pas cela exactement* ! Créez votre propre contenu, au format que vous souhaitez.
 
-**LinkedIn**
+###LinkedIn
 
 Il est maintenant temps de vous créer un profil LinkedIn ou de le mettre à jour pour indiquer votre statut d'étudiant chez OpenClassrooms. De même que pour votre CV, une page LinkedIn bien travaillée aidera de potentiels employeurs à vous trouver facilement (et vice versa) !
 
