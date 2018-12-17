@@ -1,6 +1,6 @@
 > Bienvenue sur le repository de ma formation de developpeur d'application Frontend avec Openclassrooms !
 
-> Vous trouverez à l'intérieur le descriptif de chacun des projets effectués ainsi que leur livrables.
+> Vous trouverez à l'intérieur le descriptif de chacun des projets effectués ainsi que leurs livrables.
 > Pour commencer, voici le descriptif global de la formation :
 
 # OpenClassrooms Front-End Developer Path
