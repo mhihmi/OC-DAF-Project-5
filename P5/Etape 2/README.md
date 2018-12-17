@@ -15,10 +15,3 @@ Adaptez le programme pour qu'il puisse offrir ces fonctionnalités. A vous de jo
 **Fichiers à fournir** :
 
 * Code JavaScript du projet
-
- 
-
-## Compétences à valider
-
-* Concevoir un algorithme pour répondre à un cahier des charges
-* Mettre en oeuvre la syntaxe de JavaScript dans un programme
