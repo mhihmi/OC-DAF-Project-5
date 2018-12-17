@@ -34,61 +34,49 @@ function generateRandomQuote(style) {
 
 // Etape 2 : des citations configurables
 
-
+// Option initiale : sortie en console => plus utilisé car sortie HTML
 function generateMultipleCitations(number, style) {
     for (let i = 0; i < number; i++) {
         const citation = generateRandomQuote(style);
-        //console.log('citation : ' + i + ' - ' + citation);
+        console.log('citation : ' + i + ' - ' + citation);
     }
 }
 
-//generateMultipleCitations(3, 'style2')
-/*
-function getSelectValue() {
-    let selectedValue = document.getElementById("theme").value;
-    let selectedNumber = document.getElementById("number").value;
-    //console.log(selectedValue + selectedNumber);
-}
-*/
+// Option sortie HTML : on génère des paragraphe contenant les citations
+document.getElementById('generate').addEventListener('click', function () {
 
-document.querySelector('#generate').addEventListener('click', function() {
+    // Récupérer les valeurs sélectionnées
+    let theme = document.getElementById('theme');
+    let number = document.getElementById('number');
 
-    let choixStyle = document.querySelector('#theme').value;
-    let choixNbr = document.querySelector('#number').value;
-    let quoteBox = document.getElementById("quoteBox");
+    // Test des valeurs sélectionnées
+    if (theme.selectedIndex === 0) {
+        alert('veuillez selectionner thème');
+    } else if (number.selectedIndex === 0) {
+        alert('veuillez selectionner un nombre')
+    } else { // Ici les choix sont valables
+        // Nettoyer le réceptacle des quotes
+        resetBlock();
+        let choixStyle = theme.value;
+        let choixNbr = number.value;
+        let quoteBox = document.getElementById("quoteBox");
+        for (let i = 0; i < choixNbr; i++) {
+            const quote = document.createElement("blockquote");
+            const text = document.createElement("p")
 
-    for (let i = 0; i < choixNbr; i++) {
-        let quote = document.createElement("blockquote");
-        let text = document.createElement("p")
+            text.id = "citation" + i;
 
-        text.id = "citation" + i;
+            quoteBox.appendChild(quote);
+            quote.appendChild(text);
 
-        quoteBox.appendChild(quote);
-        quote.appendChild(text);
-
-        //document.getElementById("citation" + i).innerHTML = generateRandomQuote();
-        if (theme.selectedIndex === 0 || number.selectedIndex === 0) {
-            console.log('veuillez selectionner thème et nombre s il vous plait');
-            //document.querySelector("citation" + i).innerHTML = 'veuillez selectionner thème et nombre s il vous plait';
-        } else if (theme.selectedIndex > 0 && number.selectedIndex > 0) {
-            document.querySelector("citation" + i).innerHTML = generateRandomQuote(style);
+            document.getElementById("citation" + i).innerHTML = generateRandomQuote(choixStyle);
         }
-
     }
-    //document.getElementById("button1").style.display = "none";
-    //document.getElementById("button2").style.display = "block";
-    //generateMultipleCitations(choixNbr, choixStyle)
 });
 
+document.getElementById("reset").addEventListener('click', resetBlock);
 
-
-function resetBlock() { //* Fonction permettant de supprimer les blocs de citations générer et de relancer l'application
-    document.getElementById("button1").style.display = "block";
-    document.getElementById("button2").style.display = "none";
-
-    var resetBlock = document.querySelectorAll("#quoteBox blockquote")
-    for (var u = 0, r = resetBlock.length; u < r; u++) {
-
-        quoteBox.removeChild(resetBlock[u]);
-    }
+/* Fonction permettant de supprimer les blocs de citations générer et de relancer l'application */
+function resetBlock() {
+    document.getElementById("quoteBox").innerHTML = "";
 };
