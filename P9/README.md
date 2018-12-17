@@ -1,99 +1,48 @@
-# Lancez votre propre site d'avis de restaurants
+# Effectuez un stage ou construisez une veille technologique
 
-Vous avez choisi de vous lancer dans le business des avis de restaurants. Votre objectif : créer un service simple et utile qui permet d'avoir des avis sur des restaurants autour de soi.
+```text
+Pour effectuer un stage, voici les conditions à remplir :
 
-Pour ce projet, vous allez devoir apprendre à utiliser des API externes, telles que celles de Google Maps et de Google Places (votre plus gros concurrent ;) ). Et ce n'est pas tout : vous allez devoir orchestrer toutes ces informations de manière cohérente dans votre application !
+* Avoir validé au moins 3 projets ;
+* Trouver une entreprise qui souhaite vous accueillir pour une durée supérieure à 2 mois ;
+* Etre rémunéré pendant le stage ;
+* Avoir soumis ce formulaire au moins 7 jours avant le début du stage ;
+* Pour faire valoir cette expérience dans le cadre du parcours, vous devrez rédiger un rapport de stage que vous livrerez et défendrez en soutenance devant votre mentor.
 
-## Etape 1 : la carte des restaurants
-
-Commencez par les fondations de votre application. Il y aura 2 sections principales :
-
-* Une carte Google Maps, chargée avec l'[API de Google Maps](https://developers.google.com/maps/?hl=fr)
-
-* Une liste de restaurants correspondant à la zone affichée sur la carte Google Maps
-
-Vous placerez ces éléments côte à côte.
-
-La carte Google Maps sera centrée immédiatement sur la position de l'utilisateur. Vous utiliserez l'API de géolocalisation de JavaScript. Un marqueur de couleur spécifique sera placé à l'emplacement de l'utilisateur.
-
-Une liste de restaurants est fournie sous forme de données JSON présentées dans un fichier à part. En temps normal, ces données vous seraient renvoyés par un backend via une API, mais pour cet exercice il sera pour le moment suffisant de charger en mémoire tous les restaurants en mémoire directement.
-
-Voici un exemple de fichier JSON avec déjà 2 restaurants pré-remplis (vous devriez en ajouter un peu plus) :
-
-```json
-[
-   {
-      "restaurantName":"Bronco",
-      "address":"39 Rue des Petites Écuries, 75010 Paris",
-      "lat":48.8737815,
-      "long":2.3501649,
-      "ratings":[
-         {
-            "stars":4,
-            "comment":"Un excellent restaurant, j'y reviendrai ! Par contre il vaut mieux aimer la viande."
-         },
-         {
-            "stars":5,
-            "comment":"Tout simplement mon restaurant préféré !"
-         }
-      ]
-   },
-   {
-      "restaurantName":"Babalou",
-      "address":"4 Rue Lamarck, 75018 Paris",
-      "lat":48.8865035,
-      "long":2.3442197,
-      "ratings":[
-         {
-            "stars":5,
-            "comment":"Une minuscule pizzeria délicieuse cachée juste à côté du Sacré choeur !"
-         },
-         {
-            "stars":3,
-            "comment":"J'ai trouvé ça correct, sans plus"
-         }
-      ]
-   }
-]
+Si vous ne remplissez pas toutes ces conditions et ne faites donc pas de stage, vous devrez réaliser le projet ci-dessous. 
 ```
 
-Affichez ces restaurants grâce à leurs coordonnées GPS sur la carte. Les restaurants qui sont actuellement visibles sur la carte doivent être affichés sous forme de liste sur le côté de la carte. Vous afficherez la moyenne des commentaires de chaque restaurant (qui va de 1 à 5 étoiles).
+## Description
 
-Lorsqu'on clique sur un restaurant, la liste des avis enregistrés s'affiche avec les commentaires. Affichez aussi [la photo Google Street View grâce à l'API correspondante.](https://developers.google.com/maps/documentation/streetview/?hl=fr)
+Un développeur doit rester constamment à l'affût des nouveautés technologiques, qui évoluent en continu. La **veille technologique** est pour cela une étape indispensable du quotidien.
 
-Un outil de filtre permet d'afficher uniquement les restaurants ayant entre X et Y étoiles. La mise à jour de la carte s'effectue en temps réel.
+![alt text](https://s3-eu-west-1.amazonaws.com/sdz-upload/prod/upload/veille_bureau_tableau_bord_shutterstock_365852219.jpg "La veille technologique est un moment indispensable du quotidien")
 
-Fichiers à fournir :
+Les bons développeurs suivent régulièrement les nouveautés du secteur (tous les jours et non pas toutes les semaines). Pour rester à jour, vous allez dès maintenant construire votre outil de veille technologique :
 
-* Code HTML / CSS / JS du projet
+1.Listez les technologies / thématiques que vous souhaitez suivre
+2.Listez les sites d'actualité qui peuvent vous informer sur ces technologies et thématiques
+3.Construisez une page de tableau de bord qui vous servira de veille (par exemple un tableau de bord sur Netvibes) avec les dernières actualités de ces sites
+4.Créez un compte Twitter (si vous n'en avez pas déjà un), cherchez et suivez-y plusieurs influenceurs du développement web
 
-## Etape 2 : ajoutez des restaurants et des avis !
+### Livrables attendus
 
-Vos visiteurs aimeraient eux aussi donner leur avis sur des restaurants !Proposez-leur :
+* Tableau de bord de veille technologique
+* Fil Twitter avec une liste d'influenceurs pertinents 
+* Rapport de stage (dans le cas échéant)
 
-* D'ajouter un avis sur un restaurant existant
+A l'oral en condition réelle, vous présenterez votre projet à votre mentor (il n'y aura pas de soutenance spécifique avec un mentor validateur).
 
-* D'ajouter un restaurant, en cliquant sur un lieu spécifique de la carte
+La soutenance se déroule comme suit :
 
-Une fois un avis ou un restaurant ajouté, il apparaît immédiatement sur la carte. Un nouveau marqueur apparaît pour indiquer la position du nouveau restaurant.
+* La présentation de votre dashboard et votre compte Twitter : 15-20 minutes
+* Un moment questions/réponses : 10 minutes
 
-Les informations ne seront pas sauvegardées si on quitte la page (elles restent juste en mémoire le temps de la visite).
+Votre mentor débriefera avec vous pendant 5 minutes à la fin de la soutenance.
 
-Fichiers à fournir :
 
-* Code HTML / CSS / JS du projet
+### Compétences évaluées
 
-## Etape 3 : intégration avec l'API de Google Places
+* Mettre en place un tableau de bord de veille technologique
+* Sélectionner des sources d’information pertinentes pour un certain ensemble de technologies
 
-Pour l'instant, il n'y a pas beaucoup de restaurants et pas beaucoup d'avis. Heureusement, Google Places propose une API pour récupérer des restaurants et des avis. Servez-vous en pour afficher des restaurants et avis supplémentaires sur votre carte ! Ici la documentation : [https://developers.google.com/places/](https://developers.google.com/places/)
-
-![alt text](https://user.oc-static.com/upload/2017/09/11/15051445963709_Screen%20Shot%202017-09-11%20at%205.34.49%20PM.png)
-
-Vous utiliserez la search api pour trouver des restaurants dans la zone affichée.
-
-Lisez bien la documentation pour savoir comment accéder aux données de Google Places et n'hésitez pas à faire autant de recherches Google que nécessaire quand vous butez sur un problème. ;)
-
-## Compétences évaluées
-
-* Développer une application JavaScript complète en respectant un cahier des charges
-* Utiliser une API externe en JavaScript
