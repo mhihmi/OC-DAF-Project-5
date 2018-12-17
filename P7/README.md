@@ -87,7 +87,7 @@ Fichiers à fournir :
 
 Pour l'instant, il n'y a pas beaucoup de restaurants et pas beaucoup d'avis. Heureusement, Google Places propose une API pour récupérer des restaurants et des avis. Servez-vous en pour afficher des restaurants et avis supplémentaires sur votre carte ! Ici la documentation : [https://developers.google.com/places/](https://developers.google.com/places/)
 
-(https://user.oc-static.com/upload/2017/09/11/15051445963709_Screen%20Shot%202017-09-11%20at%205.34.49%20PM.png)
+![alt text](https://user.oc-static.com/upload/2017/09/11/15051445963709_Screen%20Shot%202017-09-11%20at%205.34.49%20PM.png)
 
 Vous utiliserez la search api pour trouver des restaurants dans la zone affichée.
 
