@@ -1,99 +1,81 @@
-# Lancez votre propre site d'avis de restaurants
+# Reprenez et améliorez un projet existant
 
-Vous avez choisi de vous lancer dans le business des avis de restaurants. Votre objectif : créer un service simple et utile qui permet d'avoir des avis sur des restaurants autour de soi.
+Dans le monde professionnel, on est souvent amené à reprendre un **projet existant**. Que faire quand vous vous retrouvez avec le code de quelqu'un d'autre ? Comment l'améliorer ? Voilà un savoir-faire qui vous sera très utile au quotidien !
 
-Pour ce projet, vous allez devoir apprendre à utiliser des API externes, telles que celles de Google Maps et de Google Places (votre plus gros concurrent ;) ). Et ce n'est pas tout : vous allez devoir orchestrer toutes ces informations de manière cohérente dans votre application !
+En effet, faire un projet de bout en bout est "facile" : on connaît son fonctionnement sur le bout des doigts. En revanche, on se rend vite compte qu'il est plus dur de **reprendre le travail** de quelqu'un d'autre... surtout quand il n'a pas de tests !
 
-## Etape 1 : la carte des restaurants
+Vous venez d'intégrer une petite équipe qui pense que tous les problèmes du monde viennent du fait que les gens ne sont pas assez organisés et qu'un peu de focus pourrait tout changer ! C'est pourquoi ils ont créé ce qu'ils appellent la meilleur application **"to-do list"** du monde. L'idée elle-même est très bien mais le code derrière n'est pas au top ! Ils vous ont sollicité pour ajouter des tests et régler quelques bugs dans le code.
 
-Commencez par les fondations de votre application. Il y aura 2 sections principales :
+[Commencez par télécharger le code du projet :](https://s3-eu-west-1.amazonaws.com/static.oc-static.com/prod/courses/files/project-8-frontend/todo-list-project.zip)
 
-* Une carte Google Maps, chargée avec l'[API de Google Maps](https://developers.google.com/maps/?hl=fr)
+Regardez comment il est structuré et essayez de comprendre comment il fonctionne. Votre mission sera de **corriger des bugs, ajouter des tests**, et optimiser sa performance.
 
-* Une liste de restaurants correspondant à la zone affichée sur la carte Google Maps
+![alt text](https://user.oc-static.com/upload/2017/10/19/15083988221397_Screen%20Shot%202017-10-17%20at%2010.52.21%20AM.png "À vous de faire la meilleur application 'to-do list' au monde !")
 
-Vous placerez ces éléments côte à côte.
+## Etape 1 : Corrigez les bugs
 
-La carte Google Maps sera centrée immédiatement sur la position de l'utilisateur. Vous utiliserez l'API de géolocalisation de JavaScript. Un marqueur de couleur spécifique sera placé à l'emplacement de l'utilisateur.
+Il y a deux bugs dans le code et c'est votre mission de les trouver ! Voici quelques indices:
 
-Une liste de restaurants est fournie sous forme de données JSON présentées dans un fichier à part. En temps normal, ces données vous seraient renvoyés par un backend via une API, mais pour cet exercice il sera pour le moment suffisant de charger en mémoire tous les restaurants en mémoire directement.
+* Le premier est une faute de frappe.
+* Le deuxième introduit un conflit éventuel entre deux IDs identiques.
+Vous allez chercher ces bugs dans le code, un peu comme dans "Où est Charlie". Une fois les bugs trouvés, corrigez-les ! Ils empêchent le code de marcher correctement (pour l'instant ce n'est même pas possible d'ajouter des tâches à la liste à cause de ces bugs).
 
-Voici un exemple de fichier JSON avec déjà 2 restaurants pré-remplis (vous devriez en ajouter un peu plus) :
+Il y a également des améliorations à faire, même s'il ne s'agit pas de bugs proprement dit. Essayez de trouver où vous pouvez optimiser des boucles et vérifiez s'il y a des fonctions qui affichent des informations dans la console de déboggage  qui ne sont pas nécessaires.
 
-```json
-[
-   {
-      "restaurantName":"Bronco",
-      "address":"39 Rue des Petites Écuries, 75010 Paris",
-      "lat":48.8737815,
-      "long":2.3501649,
-      "ratings":[
-         {
-            "stars":4,
-            "comment":"Un excellent restaurant, j'y reviendrai ! Par contre il vaut mieux aimer la viande."
-         },
-         {
-            "stars":5,
-            "comment":"Tout simplement mon restaurant préféré !"
-         }
-      ]
-   },
-   {
-      "restaurantName":"Babalou",
-      "address":"4 Rue Lamarck, 75018 Paris",
-      "lat":48.8865035,
-      "long":2.3442197,
-      "ratings":[
-         {
-            "stars":5,
-            "comment":"Une minuscule pizzeria délicieuse cachée juste à côté du Sacré choeur !"
-         },
-         {
-            "stars":3,
-            "comment":"J'ai trouvé ça correct, sans plus"
-         }
-      ]
-   }
-]
+## Etape 2 : où sont les tests ?!
+
+Vous allez voir que ce projet a déjà quelques tests mais largement pas assez ! Pour le prendre en main, vous allez ajouter tous les tests unitaires et fonctionnels  pertinents que vous pouvez. L'objectif est de solidifier le projet. Ainsi, lorsque vous le modifierez par la suite, vous pourrez vous baser sur ces tests pour vérifier que vous ne "cassez" rien.
+
+Cette étape peut paraître un peu longue et fastidieuse, mais elle est nécessaire pour gagner beaucoup de temps et éviter des surprises à l'avenir !
+
+Il y a déjà un **fichier existant** pour les tests de ce projet :  ```ControllerSpec.js``` .  À l'intérieur de ce fichier, quelques tests à ajouter sont indiqués dans le code. Ils sont indiqués avec le commentaire suivant :
+
+``` text
+// TODO: write test
 ```
 
-Affichez ces restaurants grâce à leurs coordonnées GPS sur la carte. Les restaurants qui sont actuellement visibles sur la carte doivent être affichés sous forme de liste sur le côté de la carte. Vous afficherez la moyenne des commentaires de chaque restaurant (qui va de 1 à 5 étoiles).
+Plus précisément, vous pouvez les trouver sur les lignes #62, #86, #90, #137, #141, #146, #150, #156, et #196 de  ```ControllerSpec.js``` .
 
-Lorsqu'on clique sur un restaurant, la liste des avis enregistrés s'affiche avec les commentaires. Affichez aussi [la photo Google Street View grâce à l'API correspondante.](https://developers.google.com/maps/documentation/streetview/?hl=fr)
+Vous pouvez aller plus loin et ajouter des tests supplémentaires si vous le voulez !
 
-Un outil de filtre permet d'afficher uniquement les restaurants ayant entre X et Y étoiles. La mise à jour de la carte s'effectue en temps réel.
+## Etape 3 : optimisez la performance
 
-Fichiers à fournir :
+Votre équipe vous a demandé d'analyser la performance d'un site concurrent pour identifier ce qui marche bien et ce qui ne marche pas, au cas où vous décidez de "scaler" votre propre application. Voici le site du concurrent.
 
-* Code HTML / CSS / JS du projet
+Utilisez la console de développement de votre navigateur pour analyser la performance du site. Faites attention aux ressources utilisées par les différents éléments du site (par exemple, ce qui est lent, ce qui est rapide, etc) et aux ressources utilisées par les publicités sur le site et celles utilisées pour effectuer les fonctionnalités "To-do" pour la liste elle-même.
 
-## Etape 2 : ajoutez des restaurants et des avis !
+Maintenant, vous allez faire un audit de performance. En vous appuyant sur les données, écrivez un document de 300 à 500 mots qui décrit la performance du site, comment il se distingue de votre application, et comment optimiser la performance en vue d'un éventuel "scaling" de votre application.
 
-Vos visiteurs aimeraient eux aussi donner leur avis sur des restaurants !Proposez-leur :
+## Etape 4 : améliorez le projet
 
-* D'ajouter un avis sur un restaurant existant
+Maintenant que vous connaissez ce code par cœur, vous pouvez facilement ajouter des informations supplémentaires à votre documentation. Vous êtes désormais prêt à écrire de la documentation technique ! Jetez un œil aux exemples suivants pour vous inspirer.
 
-* D'ajouter un restaurant, en cliquant sur un lieu spécifique de la carte
+Pour le dire plus simplement, il faut documenter les éléments suivants :
 
-Une fois un avis ou un restaurant ajouté, il apparaît immédiatement sur la carte. Un nouveau marqueur apparaît pour indiquer la position du nouveau restaurant.
+* le projet lui-même (l'usage non technique)
+* comment il fonctionne techniquement
+* votre audit
 
-Les informations ne seront pas sauvegardées si on quitte la page (elles restent juste en mémoire le temps de la visite).
+Vous pouvez utiliser le format que vous souhaitez (ex. un wiki sur Github, un document en format texte, etc).
 
-Fichiers à fournir :
+### Fichiers à fournir
 
-* Code HTML / CSS / JS du projet
+* La base de code mise à jour avec les améliorations et les tests
+* La documentation technique de votre projet, y compris votre audit, sous le format que vous souhaitez
 
-## Etape 3 : intégration avec l'API de Google Places
+### Presentation
 
-Pour l'instant, il n'y a pas beaucoup de restaurants et pas beaucoup d'avis. Heureusement, Google Places propose une API pour récupérer des restaurants et des avis. Servez-vous en pour afficher des restaurants et avis supplémentaires sur votre carte ! Ici la documentation : [https://developers.google.com/places/](https://developers.google.com/places/)
+Vous ferez une presentation de votre projet avec un mentor, afin de simuler des conditions réelles.
 
-![alt text](https://user.oc-static.com/upload/2017/09/11/15051445963709_Screen%20Shot%202017-09-11%20at%205.34.49%20PM.png)
+La présentation suivra la structure ci-dessous :
 
-Vous utiliserez la search api pour trouver des restaurants dans la zone affichée.
+* Présentation de votre code, des tests et de vos optimisations : 15-20 minutes
+* Questions / réponses : 10 minutes
 
-Lisez bien la documentation pour savoir comment accéder aux données de Google Places et n'hésitez pas à faire autant de recherches Google que nécessaire quand vous butez sur un problème. ;)
+À la fin de votre présentation, le mentor fera un débriefing pendant environ 5 minutes.
 
 ## Compétences évaluées
 
-* Développer une application JavaScript complète en respectant un cahier des charges
-* Utiliser une API externe en JavaScript
+* Mettre en oeuvre des tests unitaires et fonctionnels dans une application web
+* Optimiser les performances d'un projet à l'aide des DevTools
+* Reprendre en main un projet JavaScript existant
