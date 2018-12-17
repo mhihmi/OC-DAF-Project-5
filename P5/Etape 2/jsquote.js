@@ -43,7 +43,7 @@ function generateMultipleCitations(number, style) {
 }
 
 // Option sortie HTML : on génère des paragraphe contenant les citations
-document.getElementById('generate').addEventListener('click', function () {
+document.getElementById('generate').addEventListener('click', function() {
 
     // Récupérer les valeurs sélectionnées
     let theme = document.getElementById('theme');
@@ -76,7 +76,7 @@ document.getElementById('generate').addEventListener('click', function () {
 
 document.getElementById("reset").addEventListener('click', resetBlock);
 
-/* Fonction permettant de supprimer les blocs de citations générer et de relancer l'application */
+/* Fonction permettant de supprimer les blocs de citations générées et de relancer l'application */
 function resetBlock() {
     document.getElementById("quoteBox").innerHTML = "";
 };
